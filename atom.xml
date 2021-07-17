@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hello Python</title>
+  
+  
+  <link href="https://setmao.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://setmao.github.io/"/>
+  <updated>2021-07-17T04:08:28.249Z</updated>
+  <id>https://setmao.github.io/</id>
+  
+  <author>
+    <name>Set Mao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Awesome Online Exercises</title>
+    <link href="https://setmao.github.io/2021-07-17/Awesome-Online-Exercises/"/>
+    <id>https://setmao.github.io/2021-07-17/Awesome-Online-Exercises/</id>
+    <published>2021-07-17T03:43:02.000Z</published>
+    <updated>2021-07-17T04:08:28.249Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;記錄一些好玩的線上練習網站&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;CSS&quot;&gt;&lt;a href=&quot;#CSS&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python 的 GIL 是什麼？</title>
+    <link href="https://setmao.github.io/2021-07-11/Python-%E7%9A%84-GIL-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F/"/>
+    <id>https://setmao.github.io/2021-07-11/Python-%E7%9A%84-GIL-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F/</id>
+    <published>2021-07-11T08:30:24.000Z</published>
+    <updated>2021-07-12T15:36:45.200Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在面試的時候被問到 GIL，雖然我是直接回答說我看不懂，但是仔細想想上一次看也是快一年前了，於是想趁報到前再來挑戰一次</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://setmao.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面試 debug 情境題</title>
+    <link href="https://setmao.github.io/2021-07-06/%E9%9D%A2%E8%A9%A6-debug-%E6%83%85%E5%A2%83%E9%A1%8C/"/>
+    <id>https://setmao.github.io/2021-07-06/%E9%9D%A2%E8%A9%A6-debug-%E6%83%85%E5%A2%83%E9%A1%8C/</id>
+    <published>2021-07-06T12:22:36.000Z</published>
+    <updated>2021-07-06T12:52:29.116Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;面試的時候被考到一題情境題覺得蠻有趣的，於是決定記錄下來&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;面試過程&quot;&gt;&lt;a href=&quot;#面試過程&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="面試" scheme="https://setmao.github.io/categories/%E9%9D%A2%E8%A9%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP GET method vs POST method</title>
+    <link href="https://setmao.github.io/2021-07-04/HTTP-GET-method-vs-POST-method/"/>
+    <id>https://setmao.github.io/2021-07-04/HTTP-GET-method-vs-POST-method/</id>
+    <published>2021-07-04T12:45:55.000Z</published>
+    <updated>2021-07-05T10:00:18.781Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;HTTP 的 method 中最常被用到的應該就是 GET 及 POST 了&lt;br&gt;但是 GET 與 POST 除了使用場景不一樣之外，到底還有哪些區別呢？&lt;/p&gt;
+&lt;p&gt;我們知道 GET 通常都透過 query string 來傳遞參數，POST 則是使用</summary>
+        
+      
+    
+    
+    
+    <category term="面試" scheme="https://setmao.github.io/categories/%E9%9D%A2%E8%A9%A6/"/>
+    
+    <category term="網概" scheme="https://setmao.github.io/categories/%E9%9D%A2%E8%A9%A6/%E7%B6%B2%E6%A6%82/"/>
+    
+    
+    <category term="HTTP" scheme="https://setmao.github.io/tags/HTTP/"/>
+    
+    <category term="Network" scheme="https://setmao.github.io/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTPS 加密了哪些東西？</title>
+    <link href="https://setmao.github.io/2021-07-04/HTTPS-%E5%8A%A0%E5%AF%86%E4%BA%86%E5%93%AA%E4%BA%9B%E6%9D%B1%E8%A5%BF%EF%BC%9F/"/>
+    <id>https://setmao.github.io/2021-07-04/HTTPS-%E5%8A%A0%E5%AF%86%E4%BA%86%E5%93%AA%E4%BA%9B%E6%9D%B1%E8%A5%BF%EF%BC%9F/</id>
+    <published>2021-07-04T12:40:39.000Z</published>
+    <updated>2021-07-05T10:00:18.781Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;HTTPS 會加密 path, query string, request body&lt;br&gt;但是 domain name 不一定會加密（如果沒有使用 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="面試" scheme="https://setmao.github.io/categories/%E9%9D%A2%E8%A9%A6/"/>
+    
+    <category term="網概" scheme="https://setmao.github.io/categories/%E9%9D%A2%E8%A9%A6/%E7%B6%B2%E6%A6%82/"/>
+    
+    
+    <category term="HTTP" scheme="https://setmao.github.io/tags/HTTP/"/>
+    
+    <category term="Network" scheme="https://setmao.github.io/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>從瀏覽器輸入網址到看到網頁到底發生了哪些事？</title>
+    <link href="https://setmao.github.io/2021-07-04/%E5%BE%9E%E7%80%8F%E8%A6%BD%E5%99%A8%E8%BC%B8%E5%85%A5%E7%B6%B2%E5%9D%80%E5%88%B0%E7%9C%8B%E5%88%B0%E7%B6%B2%E9%A0%81%E5%88%B0%E5%BA%95%E7%99%BC%E7%94%9F%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BA%8B%EF%BC%9F/"/>
+    <id>https://setmao.github.io/2021-07-04/%E5%BE%9E%E7%80%8F%E8%A6%BD%E5%99%A8%E8%BC%B8%E5%85%A5%E7%B6%B2%E5%9D%80%E5%88%B0%E7%9C%8B%E5%88%B0%E7%B6%B2%E9%A0%81%E5%88%B0%E5%BA%95%E7%99%BC%E7%94%9F%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BA%8B%EF%BC%9F/</id>
+    <published>2021-07-03T16:08:52.000Z</published>
+    <updated>2021-07-17T04:44:42.048Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;images/network.jpg&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 browser 輸入網址&lt;/li&gt;
+&lt;li&gt;browser 跟 OS 要網址的 IP address&lt;/li&gt;
+&lt;li&gt;OS 向 DNS 查詢 IP</summary>
+        
+      
+    
+    
+    
+    <category term="面試" scheme="https://setmao.github.io/categories/%E9%9D%A2%E8%A9%A6/"/>
+    
+    <category term="網概" scheme="https://setmao.github.io/categories/%E9%9D%A2%E8%A9%A6/%E7%B6%B2%E6%A6%82/"/>
+    
+    
+    <category term="HTTP" scheme="https://setmao.github.io/tags/HTTP/"/>
+    
+    <category term="Network" scheme="https://setmao.github.io/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BeautifulSoup Parsers</title>
+    <link href="https://setmao.github.io/2021-05-06/BeautifulSoup-Parsers/"/>
+    <id>https://setmao.github.io/2021-05-06/BeautifulSoup-Parsers/</id>
+    <published>2021-05-06T15:04:17.000Z</published>
+    <updated>2021-07-05T10:00:18.780Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近常常在用 Python 寫爬蟲&lt;br&gt;Python 爬蟲起手式：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Crawler" scheme="https://setmao.github.io/categories/Crawler/"/>
+    
+    
+    <category term="BeautifulSoup" scheme="https://setmao.github.io/tags/BeautifulSoup/"/>
+    
+    <category term="Python" scheme="https://setmao.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Backup/Restore a dockerized PostgreSQL database</title>
+    <link href="https://setmao.github.io/2020-06-29/Backup-Restore-a-dockerized-PostgreSQL-database/"/>
+    <id>https://setmao.github.io/2020-06-29/Backup-Restore-a-dockerized-PostgreSQL-database/</id>
+    <published>2020-06-29T10:56:19.000Z</published>
+    <updated>2021-07-05T10:00:18.780Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;記錄一下&lt;/p&gt;
+&lt;p&gt;在 docker 中備份 PostgreSQL&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="https://setmao.github.io/categories/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://setmao.github.io/tags/Docker/"/>
+    
+    <category term="PostgreSQL" scheme="https://setmao.github.io/tags/PostgreSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker: no space left on device</title>
+    <link href="https://setmao.github.io/2020-06-09/Docker-no-space-left-on-device/"/>
+    <id>https://setmao.github.io/2020-06-09/Docker-no-space-left-on-device/</id>
+    <published>2020-06-09T04:37:16.000Z</published>
+    <updated>2021-07-05T10:00:18.781Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天在 build docker image 的時候出現這個錯誤&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="https://setmao.github.io/categories/Docker/"/>
+    
+    
+    <category term="Docker" scheme="https://setmao.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django-1.11-to-2.2</title>
+    <link href="https://setmao.github.io/2020-06-08/Django-1-11-to-2-2/"/>
+    <id>https://setmao.github.io/2020-06-08/Django-1-11-to-2-2/</id>
+    <published>2020-06-08T09:57:50.000Z</published>
+    <updated>2021-07-05T10:00:18.780Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;因為 Django 1.11 在今年四月開始停止更新了，所以花了一天時間幫公司從 Django 1.11 升級到 2.2&lt;br&gt;用這篇來記錄一下升級的過程&lt;/p&gt;
+&lt;h3 id=&quot;前置作業：&quot;&gt;&lt;a href=&quot;#前置作業：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Django" scheme="https://setmao.github.io/categories/Django/"/>
+    
+    
+    <category term="Python" scheme="https://setmao.github.io/tags/Python/"/>
+    
+    <category term="Django" scheme="https://setmao.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django Migrations</title>
+    <link href="https://setmao.github.io/2020-05-28/Django-Migrations/"/>
+    <id>https://setmao.github.io/2020-05-28/Django-Migrations/</id>
+    <published>2020-05-28T02:35:00.000Z</published>
+    <updated>2021-07-05T10:00:18.780Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Django 的 Migrations 除了在能在資料庫中建立新的資料表、修改舊的資料表結構外，我們也能自己寫 code 在新增資料表、修改舊的資料表結構的同時對資料表做 CRUD（Create, Read, Update,</summary>
+        
+      
+    
+    
+    
+    <category term="Django" scheme="https://setmao.github.io/categories/Django/"/>
+    
+    
+    <category term="Python" scheme="https://setmao.github.io/tags/Python/"/>
+    
+    <category term="Django" scheme="https://setmao.github.io/tags/Django/"/>
+    
+  </entry>
+  
+</feed>
