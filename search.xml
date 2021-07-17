@@ -36,26 +36,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Backup/Restore a dockerized PostgreSQL database</title>
-    <url>/2020-06-29/Backup-Restore-a-dockerized-PostgreSQL-database/</url>
-    <content><![CDATA[<p>記錄一下</p>
-<p>在 docker 中備份 PostgreSQL</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -t &lt;container_name&gt; pg_dumpall -c -U &lt;user_name&gt; &gt; dump_`date +%d-%m-%Y<span class="string">&quot;_&quot;</span>%H_%M_%S`.sql</span><br></pre></td></tr></table></figure>
-
-<p>在 docker 中將 SQL 檔匯入 PostgreSQL</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat &lt;your_dump&gt;.sql | docker <span class="built_in">exec</span> -i &lt;container_name&gt; psql -U &lt;user_name&gt;</span><br></pre></td></tr></table></figure>
-
-<p>資料來源：<a href="https://stackoverflow.com/questions/24718706/backup-restore-a-dockerized-postgresql-database">https://stackoverflow.com/questions/24718706/backup-restore-a-dockerized-postgresql-database</a></p>
-]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>PostgreSQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BeautifulSoup Parsers</title>
     <url>/2021-05-06/BeautifulSoup-Parsers/</url>
     <content><![CDATA[<p>最近常常在用 Python 寫爬蟲<br>Python 爬蟲起手式：</p>
@@ -95,6 +75,26 @@
       <tags>
         <tag>BeautifulSoup</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Backup/Restore a dockerized PostgreSQL database</title>
+    <url>/2020-06-29/Backup-Restore-a-dockerized-PostgreSQL-database/</url>
+    <content><![CDATA[<p>記錄一下</p>
+<p>在 docker 中備份 PostgreSQL</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -t &lt;container_name&gt; pg_dumpall -c -U &lt;user_name&gt; &gt; dump_`date +%d-%m-%Y<span class="string">&quot;_&quot;</span>%H_%M_%S`.sql</span><br></pre></td></tr></table></figure>
+
+<p>在 docker 中將 SQL 檔匯入 PostgreSQL</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat &lt;your_dump&gt;.sql | docker <span class="built_in">exec</span> -i &lt;container_name&gt; psql -U &lt;user_name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>資料來源：<a href="https://stackoverflow.com/questions/24718706/backup-restore-a-dockerized-postgresql-database">https://stackoverflow.com/questions/24718706/backup-restore-a-dockerized-postgresql-database</a></p>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>PostgreSQL</tag>
       </tags>
   </entry>
   <entry>
@@ -227,27 +227,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HTTP GET method vs POST method</title>
-    <url>/2021-07-04/HTTP-GET-method-vs-POST-method/</url>
-    <content><![CDATA[<p>HTTP 的 method 中最常被用到的應該就是 GET 及 POST 了<br>但是 GET 與 POST 除了使用場景不一樣之外，到底還有哪些區別呢？</p>
-<p>我們知道 GET 通常都透過 query string 來傳遞參數，POST 則是使用 request body<br>但是其實 GET 也可以透過 request body 來傳遞參數，同理 POST 其實也能使用 query string（只是上述兩種方式都不推薦）</p>
-<p>所以具體的差別不在於透過什麼方式傳遞參數，而在於以下幾點</p>
-<ol>
-<li>POST 不會被 cache，GET 會</li>
-<li>POST 不會出現在瀏覽器的訪問記錄裡，GET 會</li>
-<li>POST 不能被存成書籤，GET 能</li>
-</ol>
-]]></content>
-      <categories>
-        <category>面試</category>
-        <category>網概</category>
-      </categories>
-      <tags>
-        <tag>HTTP</tag>
-        <tag>Network</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker: no space left on device</title>
     <url>/2020-06-09/Docker-no-space-left-on-device/</url>
     <content><![CDATA[<p>今天在 build docker image 的時候出現這個錯誤</p>
@@ -320,6 +299,41 @@
       </categories>
       <tags>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTTP GET method vs POST method</title>
+    <url>/2021-07-04/HTTP-GET-method-vs-POST-method/</url>
+    <content><![CDATA[<p>HTTP 的 method 中最常被用到的應該就是 GET 及 POST 了<br>但是 GET 與 POST 除了使用場景不一樣之外，到底還有哪些區別呢？</p>
+<p>我們知道 GET 通常都透過 query string 來傳遞參數，POST 則是使用 request body<br>但是其實 GET 也可以透過 request body 來傳遞參數，同理 POST 其實也能使用 query string（只是上述兩種方式都不推薦）</p>
+<p>所以具體的差別不在於透過什麼方式傳遞參數，而在於以下幾點</p>
+<ol>
+<li>POST 不會被 cache，GET 會</li>
+<li>POST 不會出現在瀏覽器的訪問記錄裡，GET 會</li>
+<li>POST 不能被存成書籤，GET 能</li>
+</ol>
+]]></content>
+      <categories>
+        <category>面試</category>
+        <category>網概</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTTPS 加密了哪些東西？</title>
+    <url>/2021-07-04/HTTPS-%E5%8A%A0%E5%AF%86%E4%BA%86%E5%93%AA%E4%BA%9B%E6%9D%B1%E8%A5%BF%EF%BC%9F/</url>
+    <content><![CDATA[<p>HTTPS 會加密 path, query string, request body<br>但是 domain name 不一定會加密（如果沒有使用 <a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%E7%A7%B0%E6%8C%87%E7%A4%BA">SNI</a> 才會把 domain name 加密）</p>
+]]></content>
+      <categories>
+        <category>面試</category>
+        <category>網概</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -402,20 +416,6 @@
 ]]></content>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTTPS 加密了哪些東西？</title>
-    <url>/2021-07-04/HTTPS-%E5%8A%A0%E5%AF%86%E4%BA%86%E5%93%AA%E4%BA%9B%E6%9D%B1%E8%A5%BF%EF%BC%9F/</url>
-    <content><![CDATA[<p>HTTPS 會加密 path, query string, request body<br>但是 domain name 不一定會加密（如果沒有使用 <a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%E7%A7%B0%E6%8C%87%E7%A4%BA">SNI</a> 才會把 domain name 加密）</p>
-]]></content>
-      <categories>
-        <category>面試</category>
-        <category>網概</category>
-      </categories>
-      <tags>
-        <tag>HTTP</tag>
-        <tag>Network</tag>
       </tags>
   </entry>
   <entry>

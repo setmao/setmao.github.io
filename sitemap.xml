@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://setmao.github.io/2021-07-04/HTTP-GET-method-vs-POST-method/</loc>
+    <loc>https://setmao.github.io/2020-06-09/Docker-no-space-left-on-device/</loc>
     
     <lastmod>2021-07-05</lastmod>
     
   </url>
   
   <url>
-    <loc>https://setmao.github.io/2020-06-09/Docker-no-space-left-on-device/</loc>
+    <loc>https://setmao.github.io/2021-07-04/HTTP-GET-method-vs-POST-method/</loc>
     
     <lastmod>2021-07-05</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://setmao.github.io/2020-06-29/Backup-Restore-a-dockerized-PostgreSQL-database/</loc>
+    <loc>https://setmao.github.io/2021-05-06/BeautifulSoup-Parsers/</loc>
     
     <lastmod>2021-07-05</lastmod>
     
   </url>
   
   <url>
-    <loc>https://setmao.github.io/2021-05-06/BeautifulSoup-Parsers/</loc>
+    <loc>https://setmao.github.io/2020-06-29/Backup-Restore-a-dockerized-PostgreSQL-database/</loc>
     
     <lastmod>2021-07-05</lastmod>
     
@@ -116,20 +116,6 @@
 
   
   <url>
-    <loc>https://setmao.github.io/tags/Docker/</loc>
-    <lastmod>2021-07-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://setmao.github.io/tags/PostgreSQL/</loc>
-    <lastmod>2021-07-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://setmao.github.io/tags/BeautifulSoup/</loc>
     <lastmod>2021-07-17</lastmod>
     <changefreq>daily</changefreq>
@@ -138,6 +124,20 @@
   
   <url>
     <loc>https://setmao.github.io/tags/Python/</loc>
+    <lastmod>2021-07-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://setmao.github.io/tags/Docker/</loc>
+    <lastmod>2021-07-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://setmao.github.io/tags/PostgreSQL/</loc>
     <lastmod>2021-07-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -174,14 +174,14 @@
   </url>
   
   <url>
-    <loc>https://setmao.github.io/categories/Docker/</loc>
+    <loc>https://setmao.github.io/categories/Crawler/</loc>
     <lastmod>2021-07-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://setmao.github.io/categories/Crawler/</loc>
+    <loc>https://setmao.github.io/categories/Docker/</loc>
     <lastmod>2021-07-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
