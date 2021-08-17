@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Backup/Restore a dockerized PostgreSQL database</title>
+    <url>/2020-06-29/Backup-Restore-a-dockerized-PostgreSQL-database/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>記錄一下要怎麼在 docker 中對  PostgreSQL 備份/匯入資料</p>
+<hr>
+<p>在 docker 中備份 PostgreSQL</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -t &lt;container_name&gt; pg_dumpall -c -U &lt;user_name&gt; &gt; dump_`date +%d-%m-%Y<span class="string">&quot;_&quot;</span>%H_%M_%S`.sql</span><br></pre></td></tr></table></figure>
+
+<p>在 docker 中將 SQL 檔匯入 PostgreSQL</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">cat &lt;your_dump&gt;.sql | docker <span class="built_in">exec</span> -i &lt;container_name&gt; psql -U &lt;user_name&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://stackoverflow.com/questions/24718706/backup-restore-a-dockerized-postgresql-database">Backup/Restore a dockerized PostgreSQL database</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>PostgreSQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Awesome Online Exercises</title>
+    <url>/2021-07-17/Awesome-Online-Exercises/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>記錄一些好玩的線上練習網站</p>
+<hr>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
+<li><a href="https://flukeout.github.io/">CSS Dinner</a></li>
+<li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
+<li><a href="https://hexschool.github.io/flexbox-pirate/index.html">Flex Pirate</a></li>
+<li><a href="https://cssgridgarden.com/">Grid Garden</a></li>
+</ul>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ul>
+<li><a href="https://learngitbranching.js.org/index.html">Learn Git Branching</a></li>
+</ul>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><ul>
+<li><a href="https://lidemy-http-challenge.herokuapp.com/start">HTTP Challenge</a></li>
+</ul>
+<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><ul>
+<li><a href="https://mysteries.wizardzines.com/slow-website.html">The Case of the Slow Websites</a></li>
+<li><a href="https://mysteries.wizardzines.com/connection-timeout.html">The Case of the Connection Timeout</a></li>
+<li><a href="https://mysteries.wizardzines.com/problem-dns-update.html">The Case of the DNS Update that Didn’t Work</a></li>
+<li><a href="https://mysteries.wizardzines.com/50ms-request.html">The Case of the 50ms Request</a></li>
+</ul>
+<h2 id="Regex"><a href="#Regex" class="headerlink" title="Regex"></a>Regex</h2><ul>
+<li><a href="https://regexone.com/">RegexOne</a></li>
+</ul>
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><ul>
+<li><a href="https://www.w3schools.com/sql/exercise.asp">W3Schools SQL Exercise</a></li>
+<li><a href="https://sqlbolt.com/">SQLBolt</a></li>
+</ul>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><ul>
+<li><a href="https://xss-game.appspot.com/">XSS game</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Git</tag>
+        <tag>HTTP</tag>
+        <tag>Network</tag>
+        <tag>Regex</tag>
+        <tag>SQL</tag>
+        <tag>XSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BeautifulSoup Parsers</title>
+    <url>/2021-05-06/BeautifulSoup-Parsers/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近常常在用 Python 寫爬蟲<br>就好奇 BeautifulSoup 不同的 Parser 之間有什麼差別<br>於是寫了這篇文來記錄一下</p>
+<hr>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;https://google.com/&quot;</span></span><br><span class="line"></span><br><span class="line">resp = requests.get(url)</span><br><span class="line">soup = BeautifulSoup(resp.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">soup = BeautifulSoup(resp.text, <span class="string">&quot;lxml&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>網路上的爬蟲教學常常會看到以上兩種寫法，可以看到差別就是 html.parser 跟 lxml<br>這個其實是在跟 BeautifulSoup 說我們要用哪種 Parser 去解析 HTML<br>但是到底 BeautifulSoup 支援多少種 Parser，及每種 Parser 到底差在哪？<br>於是就隨手 google 了一下發現了 StackOverflow 上的<a href="https://stackoverflow.com/questions/45494505/beautifulsoup-whats-the-difference-between-lxml-and-html-parser-and-html5">這篇</a>及 BeautifulSoup 的 <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser">doc</a><br>以下是不同的 Parser 的比較表格</p>
+<blockquote>
+<p>tl;dr<br>速度最快：lxml<br>相容性最高：html5lib<br>剩下用：html.parser</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Parser</th>
+<th align="center">優點</th>
+<th align="center">缺點</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>html.parser</td>
+<td align="center">Python 內建，不需額外安裝</td>
+<td align="center">速度跟相容性都普通</td>
+</tr>
+<tr>
+<td>lxml</td>
+<td align="center">快</td>
+<td align="center">需要額外安裝（C dependency）</td>
+</tr>
+<tr>
+<td>html5lib</td>
+<td align="center">相容性最高，所有版本的 Python 都能用</td>
+<td align="center">慢</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://stackoverflow.com/questions/45494505/beautifulsoup-whats-the-difference-between-lxml-and-html-parser-and-html5">BeautifulSoup: what’s the difference between ‘lxml’ and ‘html.parser’ and ‘html5lib’ parsers?</a></li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser">Installing a parser</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>BeautifulSoup</tag>
+        <tag>Crawler</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django-1.11-to-2.2</title>
+    <url>/2020-06-08/Django-1-11-to-2-2/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因為 Django 1.11 在今年四月開始停止更新了，所以花了一天時間幫公司從 Django 1.11 升級到 2.2<br>於是想用這篇來記錄一下升級的過程</p>
+<hr>
+<h3 id="前置作業："><a href="#前置作業：" class="headerlink" title="前置作業："></a>前置作業：</h3><p>我在升級前找了很多資料跟別人升級的心得，主要參考以下幾篇</p>
+<ol>
+<li><a href="https://tendcode.com/article/django2/">博客将 Django 1.11+ 升级到 Django 2.2+ 遇到的问题及规避方法</a></li>
+<li><a href="https://www.cnblogs.com/Zzbj/p/11150041.html">Django1和2的区别</a></li>
+<li><a href="https://docs.djangoproject.com/en/3.0/howto/upgrade-version/">Upgrading Django to a newer version</a></li>
+</ol>
+<p>第一篇主要是別人實際更新上遇到個問題</p>
+<p>第二篇是再講 Django 1.11 跟 Django 2.X 主要差別在哪</p>
+<p>第三篇是官方文件</p>
+<h3 id="開始！"><a href="#開始！" class="headerlink" title="開始！"></a>開始！</h3><ol>
+<li><p>python -Wa manage.py test</p>
+<p> 先用以下指令掃一下升級後現在的 code 可能會在哪裡報錯</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">python -Wa manage.py <span class="built_in">test</span></span><br></pre></td></tr></table></figure></li>
+<li><p>TypeError: __init__() missing 1 required positional argument: ‘on_delete’</p>
+<p> 用步驟一的指令掃完後，報了很多下面的錯誤</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">TypeError: __init__() missing <span class="number">1</span> required positional argument: <span class="string">&#x27;on_delete&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p> 出現這個的原因是因為 Django 2.X 開始 ForeignKey 的 on_delete 參數變成必填欄位（1.11 預設值為 on_delete=models.CASCADE），所以我們得先手動將 on_delete=models.CASCADE 加上去</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以下兩種寫法是等價的</span></span><br><span class="line"><span class="comment"># django 1.11</span></span><br><span class="line">creator = models.ForeignKey(User)</span><br><span class="line"><span class="comment"># django 2.2</span></span><br><span class="line">creator = models.ForeignKey(User, on_delete=models.CASCADE)</span><br></pre></td></tr></table></figure>
+
+<p> P.S. TreeForeignKey, OneToOneField..等也算 ForeignKey 的一種（可以去看 source code，其實這些都是繼承 ForeignKey 實作出來的），這些都要加，但是 GenericForeignKey 不用</p>
+<p> 補充一下 on_delete 的幾種選擇</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">on_delete=models.CASCADE,     <span class="comment"># 刪除有 ForeignKey 的 model 時將所以有有關係的 model 一起刪除</span></span><br><span class="line">on_delete=models.DO_NOTHING,  <span class="comment"># 刪除有 ForeignKey 的 model 時</span></span><br><span class="line">on_delete=models.PROTECT,     <span class="comment"># 刪除有 ForeignKey 的 model 時觸發錯誤 ProtectedError</span></span><br><span class="line">on_delete=models.SET_NULL,    <span class="comment"># 刪除有 ForeignKey 的 model 時將已經有關聯的欄位設為 NULL</span></span><br><span class="line">on_delete=models.SET_DEFAULT, <span class="comment"># 刪除有 ForeignKey 的 model 時將已經有關聯的欄位設為 default 值</span></span><br><span class="line">on_delete-models.SET(),       <span class="comment"># 刪除有 ForeignKey 的 model 後執行一個函數</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Package’s migration</p>
+<p> 加完 on_delete 後就會發現報了一些套件的 models 問題，一樣也是 on_delete 的問題（還有一些是 url 的問題，這個後面再說）</p>
+<p> 這種問題應該只有更新套件才有解了，不過通常都是 django 開頭的套件才會出錯</p>
+<p> 這邊列出幾個這次升級連帶一起升級的套件供參</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">django-avatar                4.0.0 -&gt; 5.0.0</span><br><span class="line">django-bootstrap-pagination  1.6.3 -&gt; 1.7.1</span><br><span class="line">django-celery-beat           1.0.1 -&gt; 2.0.0</span><br><span class="line">django-money                 0.11.4 -&gt; 1.1</span><br><span class="line">django-screamshot            0.8.1 -&gt; 0.8.5</span><br><span class="line">django-allauth               0.40.0 -&gt; 0.42.0</span><br></pre></td></tr></table></figure></li>
+<li><p>‘indexes’ refers to the nonexistent field</p>
+<p> 修改完 on_delete 的問題後，再用步驟一掃應該掃不出什麼了</p>
+<p> 這時候就可以直接</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">python manage.py runserver 0.0.0.0:8000</span><br></pre></td></tr></table></figure>
+
+<p> 接著應該會看到一堆的 waring</p>
+<p> 其中一個 waring 是這個</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;indexes&#x27;</span> refers to the nonexistent field</span><br></pre></td></tr></table></figure>
+
+<p> 會報錯的原因是因為在有 ForeignKey 的 model 中做 index 時，在 Django 1.11 中以下寫法是被允許的，因為其實 ForeignKey 在 db 中的做法也是在這個資料表中開一個欄位存放關聯對象的 id</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EdmRecipient</span>(<span class="params">BaseModel</span>):</span></span><br><span class="line">	team = models.ForeignKey(Team)</span><br><span class="line">	app = models.ForeignKey(App)</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">		indexes = [</span><br><span class="line">			models.Index(fields=[<span class="string">&#x27;team_id&#x27;</span>, <span class="string">&#x27;edm_id&#x27;</span>], name=<span class="string">&#x27;edmrecipient_team_edm_cat&#x27;</span>),</span><br><span class="line">		]</span><br></pre></td></tr></table></figure>
+
+<p> 但是在 Django 2.2 一定得這樣寫，不能用 team_id 的寫法，只能用 team</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EdmRecipient</span>(<span class="params">BaseModel</span>):</span></span><br><span class="line">	team = models.ForeignKey(Team, on_delete=models.CASCADE)</span><br><span class="line">	app = models.ForeignKey(App, on_delete=models.CASCADE)</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">		indexes = [</span><br><span class="line">			models.Index(fields=[<span class="string">&#x27;team_id&#x27;</span>, <span class="string">&#x27;edm_id&#x27;</span>], name=<span class="string">&#x27;edmrecipient_team_edm_cat&#x27;</span>),</span><br><span class="line">		]</span><br></pre></td></tr></table></figure></li>
+<li><p>from django.core.urlresolvers import reverse -&gt; from django.urls import reverse</p>
+<p> 這個應該沒什麼好說的，就是換個位置 import 而已</p>
+</li>
+<li><p>url() -&gt; path()</p>
+<p> 接著就來到應該算是這次升級改動最大的地方了</p>
+<p> 在 Django 1.11 中大家應該最常用</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">url(<span class="string">r&#x27;^index/$&#x27;</span>, views.IndexView.as_view())</span><br></pre></td></tr></table></figure>
+
+<p> 但在 Django 2.2 中將 url() 改成 path()，而且 path 內建了幾個 type 來篩選 url 的參數</p>
+<p> 舉個例子</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Django 1.11</span></span><br><span class="line">url(<span class="string">r&#x27;^smarts/(?P&lt;slug&gt;\[a-zA-Z0-9-_]+)/(?P&lt;uuid&gt;[a-zA-Z0-9-]+)/edit/$&#x27;</span>, views.SmartEdit.as_view(), name=<span class="string">&#x27;smart_edit&#x27;</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment"># Django 2.2</span></span><br><span class="line">path(<span class="string">&#x27;smarts/&lt;slug:slug&gt;/&lt;uuid:uuid&gt;/edit/&#x27;</span>, views.SmartEdit.as_view(), name=<span class="string">&#x27;smart_edit&#x27;</span>),</span><br></pre></td></tr></table></figure>
+
+<p> 是不是簡潔很多！</p>
+<p> 簡單來說 <a href="type:parameter_name">type:parameter_name</a></p>
+<p> 支援的 type 有以下幾種</p>
+<ul>
+<li>str - default，不吃 ‘/‘</li>
+<li>int - 就是 int</li>
+<li>slug - 只吃英、數、-、_</li>
+<li>uuid - 只吃 uuid</li>
+<li>path - str，但是吃 ‘/‘</li>
+</ul>
+<blockquote>
+<p>使用 uuid 時會回傳型別為 uuid 的資料，如果有特別需要對資料做處理時要注意</p>
+</blockquote>
+<p> ref: <a href="https://docs.djangoproject.com/en/2.2/topics/http/urls/#path-converters">Path converters</a></p>
+<p> 那如果我還是有用到 re 的需求該怎麼辦？用下面這個</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re_path()</span><br></pre></td></tr></table></figure>
+
+<p> P.S. 在看 source code 的時候我發現了這個</p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url</span>(<span class="params">regex, view, kwargs=<span class="literal">None</span>, name=<span class="literal">None</span></span>):</span></span><br><span class="line">	<span class="keyword">return</span> re_path(regex, view, kwargs, name)</span><br></pre></td></tr></table></figure>
+
+<p> source code: <a href="https://github.com/django/django/blob/stable/2.2.x/django/conf/urls//_/_init/_/_.py">https://github.com/django/django/blob/stable/2.2.x/django/conf/urls/\_\_init\_\_.py</a></p>
+</li>
+</ol>
+<p>  這代表了其實 url 還是可以用，但是其實背後是用 re_path，而且要改成</p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><p>Django TypeError: render() got an unexpected keyword argument ‘renderer’</p>
+<p> 其實原本做完步驟六就已經上線了，結果才發現這個問題QQ</p>
+<p> <a href="https://stackoverflow.com/questions/52039654/django-typeerror-render-got-an-unexpected-keyword-argument-renderer">Django TypeError: render() got an unexpected keyword argument ‘renderer’</a></p>
+<p> 看上面這篇說 renderer 這個參數已經從 render() 中移除了</p>
+<p> 後來才找到會報這個是因為 django-ckeditor 這個套件的關係</p>
+<p> 升級它就搞定啦！</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">django-ckeditor  5.4.0 -&gt; 5.9.0</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://tendcode.com/article/django2/">博客将 Django 1.11+ 升级到 Django 2.2+ 遇到的问题及规避方法</a></li>
+<li><a href="https://www.cnblogs.com/Zzbj/p/11150041.html">Django1和2的区别</a></li>
+<li><a href="https://docs.djangoproject.com/en/3.0/howto/upgrade-version/">Upgrading Django to a newer version</a></li>
+<li><a href="https://docs.djangoproject.com/en/2.2/topics/http/urls/#path-converters">Path converters</a></li>
+<li><a href="https://stackoverflow.com/questions/52039654/django-typeerror-render-got-an-unexpected-keyword-argument-renderer">Django TypeError: render() got an unexpected keyword argument ‘renderer’</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Django</category>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Django Migrations</title>
+    <url>/2020-05-28/Django-Migrations/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Django 的 Migrations 除了在能在資料庫中建立新的資料表、修改舊的資料表結構外，我們也能自己寫 code 在新增資料表、修改舊的資料表結構的同時對資料表做 CRUD（Create, Read, Update, Delete）</p>
+<p>比如以下情境：</p>
+<ul>
+<li>我現在要新建一個資料表用來存 Email Template 給客戶使用，希望在建立資料表的同時能將一些 default template 一起寫入資料庫中</li>
+<li>原本有兩個資料表分別負責存不同的資料，現在因為一些關係要把這兩個資料表整合在一起，所以我想在新建資料表後將舊的資料表中的資料轉移到新的資料表後將舊的兩個資料表刪除</li>
+</ul>
+<p>這些都可以在 Django Migrations 中完成！</p>
+<hr>
+<p>首先我們先執行下面的指令來生出一個空的 migration</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">python manage.py makemigrations --empty yourappname</span><br></pre></td></tr></table></figure>
+
+<p>接著在 migration 中加入以下的 code，並將 combine_names 改成你想做的事情</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> migrations</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">combine_names</span>(<span class="params">apps, schema_editor</span>):</span></span><br><span class="line">    <span class="comment"># We can&#x27;t import the Person model directly as it may be a newer</span></span><br><span class="line">    <span class="comment"># version than this migration expects. We use the historical version.</span></span><br><span class="line">    Person = apps.get_model(<span class="string">&#x27;yourappname&#x27;</span>, <span class="string">&#x27;Person&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> person <span class="keyword">in</span> Person.objects.<span class="built_in">all</span>():</span><br><span class="line">        person.name = <span class="string">&#x27;%s %s&#x27;</span> % (person.first\_name, person.last\_name)</span><br><span class="line">        person.save()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Migration</span>(<span class="params">migrations.Migration</span>):</span></span><br><span class="line"></span><br><span class="line">    dependencies = [</span><br><span class="line">        (<span class="string">&#x27;yourappname&#x27;</span>, <span class="string">&#x27;0001\_initial&#x27;</span>),</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    operations = [</span><br><span class="line">        migrations.RunPython(combine_names),</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<p>這邊需要注意的是 model 需要用這種方式取得：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Person = apps.get_model(<span class="string">&#x27;yourappname&#x27;</span>, <span class="string">&#x27;Person&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>然後 migrations.RunPython(combine_names) 這行將會在執行 migrate 的同時跑這個 function: combine_names</p>
+<p>寫完之後</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Django</category>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Docker: no space left on device</title>
+    <url>/2020-06-09/Docker-no-space-left-on-device/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在 build docker image 的時候遇到 No space left on device 的問題<br>因為在解的過程發現好像蠻多人都有遇過這個問題，於是就把解的過程記錄下來，希望能幫到其他人</p>
+<hr>
+<p>今天在 build docker image 的時候出現這個錯誤</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">ERROR: Could not install packages due to an EnvironmentError: [Errno 28] No space left on device</span><br></pre></td></tr></table></figure>
+
+<p>因為是死在 pip install 這關，所以一開始先往 pip 的方向去找找到了以下這篇</p>
+<p><a href="https://github.com/pypa/pip/issues/5816">[Errno 28] No space left on device #5816</a></p>
+<p>裡面看起來是在說當不是用 root 安裝時，會遇到 tmp 資料夾空間不足的問題，裡面大概提供了兩種解法：</p>
+<ol>
+<li>在家目錄底下開一個新的 tmp 資料夾，然後讓系統使用該資料夾來解決 tmp 空間不足的問題</li>
+<li>pip install –no-cache-dir <package></package></li>
+</ol>
+<p>最後覺得第一個太麻煩了（因為我是在 docker 裡面），所以選第二個</p>
+<p>但是問題沒解決，接著只把這段再加上 docker 拿去餵狗</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">No space left on device</span><br></pre></td></tr></table></figure>
+
+<p>接著看到好像真的是 docker 的問題，因為蠻多人都遇過的</p>
+<p>看起來是因為 docker 會先配置一些空間用來暫存資料，然後這個空間被塞爆後就會報這個錯誤</p>
+<p>於是我看了這篇</p>
+<p><a href="https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device">Docker error : no space left on device</a></p>
+<p>然後先試了</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">&gt; docker system prune</span><br><span class="line">WARNING! This will remove:</span><br><span class="line"> - all stopped containers</span><br><span class="line"> - all networks not used by at least one container</span><br><span class="line"> - all dangling images</span><br><span class="line"> - all dangling build cache</span><br><span class="line">Are you sure you want to <span class="built_in">continue</span>? [y/N]</span><br></pre></td></tr></table></figure>
+
+<p>可以從輸入後的結果來看到這個指令將會刪除</p>
+<ul>
+<li>all stopped containers</li>
+<li>all networks not used by at least one container</li>
+<li>all dangling images</li>
+<li>all dangling build cache</li>
+</ul>
+<p>如果上面這些東西還有要用的話這條路可能就行不通</p>
+<p>總之我執行了之後空間好像還是不夠</p>
+<p>接著照著這篇</p>
+<p><a href="https://success.docker.com/article/no-space-left-on-device-error">https://success.docker.com/article/no-space-left-on-device-error</a></p>
+<ol>
+<li><p>先找出哪些 container 的 log 檔最大</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">du -d1 -h /var/lib/docker/containers | sort -h</span><br></pre></td></tr></table></figure>
+
+<p> 大概會看到這種東西</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">36K	/var/lib/docker/containers/46d7350f4e7cd7c5c473ace07a58b74e20cb2edff7c2484c5a6e547f86ce17f3</span><br><span class="line">40K	/var/lib/docker/containers/c88c6163611685271f853a130a411cb497faf232741a9266afe9534b43b7f9c9</span><br><span class="line">44K	/var/lib/docker/containers/0819596cafb92e67b1f24890e6a19b91e1aad2ed77aba6a21e785d7f5d8319d1</span><br><span class="line">44K	/var/lib/docker/containers/137ac90cc4d23fdbfc02231edb6224dee1f9e5c088ad9245b8b0909f9b7ae74c</span><br><span class="line">116K /var/lib/docker/containers/2384b475573521048658e4ef91f61ec3ef96d151ca9fab9acf751a74ae7bc8e3</span><br><span class="line">148K /var/lib/docker/containers/ea1cf3adba3d5f2451486f826cb3c24e9e443d719bbda2af7fe51de6a5597b74</span><br><span class="line">340K /var/lib/docker/containers/d920fa2ff4455d50d75e40fbce1fd8414b84b32f272718fc83abfd707bbcebd5</span><br><span class="line">668K /var/lib/docker/containers/8eec417b6620ff884f0a8777a0e22d70ef8560af888859bbb154db54e21b26ad</span><br><span class="line">166M /var/lib/docker/containers/ad0f644b4b97f93ca6fbfc367ee42780b2bd8bd056fb8457b922df7cf3e996f8</span><br></pre></td></tr></table></figure></li>
+<li><p>找出最佔空間的 log 檔，然後搭配</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<p> 確定是哪個 container 的 log 檔且確定不需要了之後執行以下指令來清除 log 檔</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">cat /dev/null &gt; /var/lib/docker/containers/&lt;container_id&gt;/&lt;container_log_name&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 如果權限不足的話可能要用以下指令</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">sudo sh -c <span class="string">&quot;cat /dev/null &gt; /var/lib/docker/containers/&lt;container_id&gt;/&lt;container_log_name&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p> 刪完後再執行一次以下指令確認 log 檔已經被刪除</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">du -d1 -h /var/lib/docker/containers | sort -h</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>然後…還是失敗，於是決定換個思路</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">df</span><br></pre></td></tr></table></figure>
+
+<p>結果原來是 ubuntu 的空間快被吃光了..</p>
+<p>然後照著這篇做</p>
+<p><a href="https://itsfoss.com/free-up-space-ubuntu-linux/">7 Simple Ways to Free Up Space on Ubuntu and Linux Mint</a></p>
+<ol>
+<li><p>先清 apt</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure></li>
+<li><p>接著清 log</p>
+ <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 看 log 檔佔多少空間</span></span><br><span class="line">journalctl --disk-usage</span><br><span class="line"></span><br><span class="line"><span class="comment"># 刪除超過三天的 log 檔</span></span><br><span class="line">sudo journalctl --vacuum-time=3d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>再 build 一次就成功了QQ</p>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://github.com/pypa/pip/issues/5816">[Errno 28] No space left on device #5816</a></li>
+<li><a href="https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device">Docker error : no space left on device</a></li>
+<li><a href="https://success.docker.com/article/no-space-left-on-device-error">https://success.docker.com/article/no-space-left-on-device-error</a></li>
+<li><a href="https://itsfoss.com/free-up-space-ubuntu-linux/">7 Simple Ways to Free Up Space on Ubuntu and Linux Mint</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTTP GET method vs POST method</title>
+    <url>/2021-07-04/HTTP-GET-method-vs-POST-method/</url>
+    <content><![CDATA[<p>HTTP 的 method 中最常被用到的應該就是 GET 及 POST 了<br>但是 GET 與 POST 除了使用場景不一樣之外，到底還有哪些區別呢？</p>
+<p>我們知道 GET 通常都透過 query string 來傳遞參數，POST 則是使用 request body<br>但是其實 GET 也可以透過 request body 來傳遞參數，同理 POST 其實也能使用 query string（只是上述兩種方式都不推薦）</p>
+<p>所以具體的差別不在於透過什麼方式傳遞參數，而在於以下幾點</p>
+<ol>
+<li> POST 不會被 cache，GET 會</li>
+<li> POST 不會出現在瀏覽器的訪問記錄裡，GET 會</li>
+<li> POST 不能被存成書籤，GET 能</li>
+</ol>
+]]></content>
+      <categories>
+        <category>面試</category>
+        <category>網概</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTTPS 加密了哪些東西？</title>
+    <url>/2021-07-04/HTTPS-%E5%8A%A0%E5%AF%86%E4%BA%86%E5%93%AA%E4%BA%9B%E6%9D%B1%E8%A5%BF%EF%BC%9F/</url>
+    <content><![CDATA[<p>HTTPS 會加密 path, query string, request body<br>但是 domain name 不一定會加密（如果沒有使用 SNI 才會把 domain name 加密）</p>
+]]></content>
+      <categories>
+        <category>面試</category>
+        <category>網概</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 配置</title>
+    <url>/2021-07-17/Hexo-%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因為不小心手殘把 local 的 Hexo 設定砍了..<br>所以藉此來紀念我的手殘及記錄一下我的 Hexo blog 做了哪些設定</p>
+<hr>
+<h3 id="設定-deploy-到-GitHub-page-上"><a href="#設定-deploy-到-GitHub-page-上" class="headerlink" title="設定 deploy 到 GitHub page 上"></a>設定 deploy 到 GitHub page 上</h3><p>安裝套件</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>調整 _config.yml</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a>NexT</h3><p>安裝 NexT</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next --save</span><br></pre></td></tr></table></figure>
+
+<p>將 NexT 的設定檔複製出來</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">cp node_modules/hexo-theme-next/_config.yml _config.next.yml</span><br></pre></td></tr></table></figure>
+
+<p>把 _config.yml 中的 theme 改成使用 NexT</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sitemap"><a href="#Sitemap" class="headerlink" title="Sitemap"></a>Sitemap</h3><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="外部連結-nofollow"><a href="#外部連結-nofollow" class="headerlink" title="外部連結 nofollow"></a>外部連結 nofollow</h3><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">npm install hexo-filter-nofollow --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="Minifier"><a href="#Minifier" class="headerlink" title="Minifier"></a>Minifier</h3><p>安裝套件</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">npm install hexo-all-minifier --save</span><br></pre></td></tr></table></figure>
+
+<p>在 _config.yml 中加入這個</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">all_minifier:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="搜尋"><a href="#搜尋" class="headerlink" title="搜尋"></a>搜尋</h3><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="打開人數統計"><a href="#打開人數統計" class="headerlink" title="打開人數統計"></a>打開人數統計</h3><p>把 busuanzi_count 的 enable 改成 true</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-Gitalk-當留言板"><a href="#使用-Gitalk-當留言板" class="headerlink" title="使用 Gitalk 當留言板"></a>使用 Gitalk 當留言板</h3><p><a href="https://hexo-next.readthedocs.io/zh_CN/latest/next/advanced/gitalk-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">[Gitalk]评论系统</a></p>
+<h3 id="新增-404-頁面"><a href="#新增-404-頁面" class="headerlink" title="新增 404 頁面"></a>新增 404 頁面</h3><p><a href="https://ithelp.ithome.com.tw/articles/10249685">(23) 試著學 Hexo - SEO 篇 - 新增你的 404 頁面</a></p>
+<h3 id="文章置頂"><a href="#文章置頂" class="headerlink" title="文章置頂"></a>文章置頂</h3><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-topindex --save</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://shengyu7697.github.io/hexo-plugins/">Hexo 套件推薦</a></li>
+<li><a href="https://hexo-next.readthedocs.io/zh_CN/latest/next/advanced/gitalk-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">[Gitalk]评论系统</a></li>
+<li><a href="https://ithelp.ithome.com.tw/articles/10249685">(23) 試著學 Hexo - SEO 篇 - 新增你的 404 頁面</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python 的 GIL 是什麼？</title>
+    <url>/2021-07-11/Python-%E7%9A%84-GIL-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在面試的時候被問到 GIL，雖然我是直接回答說我看不懂，但是仔細想想上一次看也是快一年前了，於是想趁報到前再來挑戰一次 GIL</p>
+<p>主要會分兩個部分來講</p>
+<ol>
+<li>GIL 是什麼</li>
+<li>GIL 會造成什麼影響</li>
+<li>如何避免 GIL 造成的問題</li>
+<li>總結</li>
+</ol>
+<hr>
+<h2 id="GIL-是什麼？"><a href="#GIL-是什麼？" class="headerlink" title="GIL 是什麼？"></a>GIL 是什麼？</h2><blockquote>
+<p>In CPython, the global interpreter lock, or GIL, is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes at once. The GIL prevents race conditions and ensures thread safety. A nice explanation of <a href="https://python.land/python-concurrency/the-python-gil">how the Python GIL helps in these areas can be found here</a>. In short, this mutex is necessary mainly because CPython’s memory management is not thread-safe.</p>
+</blockquote>
+<p>簡單來說，GIL 是一個 mutex，用來避免在 multi-threading 的情況下發生 race condition 並確保 thread safety</p>
+<p>source: <a href="https://wiki.python.org/moin/GlobalInterpreterLock">https://wiki.python.org/moin/GlobalInterpreterLock</a></p>
+<p>這邊又出現了三個名詞：</p>
+<ul>
+<li>mutex</li>
+<li>race condition</li>
+<li>thread safe</li>
+</ul>
+<p>接著先讓我們搞懂這三個東西是什麼再接著說下去</p>
+<p>因為其他兩個名詞都跟 race condition 有關，所以在講其他兩個之前我們得先了解 race condition 是什麼</p>
+<h3 id="Race-Condition"><a href="#Race-Condition" class="headerlink" title="Race Condition"></a>Race Condition</h3><p>multi-threading 的情況下，每個 thread 的資源是共享的，所以不同的 thread 可以同時讀寫同一個變數，這樣就會造成程式輸出的結果有可能會因為不同 thread 執行的先後而導致輸出完全不一樣，例如：</p>
+<p>我們現在用兩個 thread 跑同樣的程式 count++，假設兩個 thread 分別是 t1, t2，執行程式的過程都是一樣，要經過下面這兩步</p>
+<ol>
+<li>拿到 count 的值</li>
+<li>把 count 的值 + 1 後存回去</li>
+</ol>
+<p>那當執行順序是這樣的話</p>
+<blockquote>
+<p>count 預設值為 0</p>
+</blockquote>
+<ol>
+<li>t1 拿 count 值 -&gt; count = 0</li>
+<li>t2 拿 count 值 -&gt; count = 0</li>
+<li>t1 把 count + 1 (0 + 1 = 1) 存回去 -&gt; count = 1</li>
+<li>t2 把 count + 1 (0 + 1 = 1) 存回去 -&gt; count = 1</li>
+</ol>
+<p>我們原本的預期行為是 count = 2，但是因為變數共用再加上這樣的執行順序就有可能導致 count = 1，這樣的狀況我們就稱為 race condition</p>
+<h3 id="Mutex"><a href="#Mutex" class="headerlink" title="Mutex"></a>Mutex</h3><p>Mutex 就是一種避免發生 race condition 的方式，它的做法就是把共用的區塊加上一把鎖，在有其中一個 thread 正在讀寫這個區塊時，其他的 thread 就不能讀寫這個區塊，加上去後上面的狀況就會變成這樣</p>
+<ol>
+<li>t1 拿 count 值，把 count 鎖起來 -&gt; count = 0</li>
+<li>t2 拿 count 值，count 被鎖了，所以拿不到 count 值</li>
+<li>t1 把 count + 1 (0 + 1 = 1) 存回去，count 使用完了，把 count 的鎖打開 -&gt; count = 1</li>
+<li>（因為 count 的鎖被解開了）t2 拿 count 值 -&gt; count = 1</li>
+<li>t2 把 count + 1 (0 + 1 = 1) 存回去 -&gt; count = 2</li>
+</ol>
+<p>這樣的值就跟我們預期中的一樣了</p>
+<h3 id="Thread-Safety"><a href="#Thread-Safety" class="headerlink" title="Thread Safety"></a>Thread Safety</h3><p>可以簡單理解成，不會發生 race condition 的狀況就是 thread safety</p>
+<hr>
+<h2 id="GIL-會造成什麼影響"><a href="#GIL-會造成什麼影響" class="headerlink" title="GIL 會造成什麼影響"></a>GIL 會造成什麼影響</h2><p>了解 GIL 是什麼後，我們就可以來看一下所以 GIL 造成什麼影響</p>
+<p>這邊我們要先分成 I/O bound 跟 CPU bound 兩種不同類型的程式來看</p>
+<ol>
+<li><p>I/O bound<br> 在 I/O bound 的程式下，只要執行 blocking 的 system call，系統就會釋放 CPU 資源給其他 thread 使用，所以 GIL 對 I/O bound 的影響並不大</p>
+</li>
+<li><p>CPU bound<br> CPU bound 這邊要再分成單核跟多核的狀況來看</p>
+<p> 在單核的狀況下就是不同的 thread 輪流使用 CPU 資源，整體上除了跑起來從原本預期的 parallel 變成 concurrent 之外沒什麼太大的影響</p>
+<p> 但是在多核的狀況下，如果兩個執行 CPU bound 任務的 thread 在不同的核心上執行，也許會出現以下的情況，其中一個核心上的 thread 在拿到 GIL 後執行任務時，另一個核心上的 thread 不停的搶 GIL 失敗，於是該核心長期呈現瞎忙的狀況</p>
+</li>
+</ol>
+<hr>
+<h2 id="如何避免-GIL-造成的問題"><a href="#如何避免-GIL-造成的問題" class="headerlink" title="如何避免 GIL 造成的問題"></a>如何避免 GIL 造成的問題</h2><p>GIL 只有在 CPython 上有，所以可以換其他的 interpreter，如：PyPy、Jython，如果在不能換掉 CPython 的狀況下，可以改用 multi-processing 跑 CPU bound 的任務</p>
+<hr>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><ol>
+<li>GIL 的作用是避免產生 race condition 並確保 thread safety</li>
+<li>GIL 對 CPU bound 的任務影響比較大</li>
+<li>可以透過換其他的 interpreter 或是改用 multi-processing 來避免 GIL 產生的效能問題</li>
+</ol>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="http://cenalulu.github.io/python/gil-in-python/">Python的GIL是什么鬼，多线程性能究竟如何</a></li>
+<li><a href="https://iter01.com/510417.html">Python3 原始碼閱讀-深入瞭解Python GIL</a></li>
+<li><a href="https://blog.louie.lu/2017/05/19/%E6%B7%B1%E5%85%A5-gil-%E5%A6%82%E4%BD%95%E5%AF%AB%E5%87%BA%E5%BF%AB%E9%80%9F%E4%B8%94-thread-safe-%E7%9A%84-python-grok-the-gil-how-to-write-fast-and-thread-safe-python/">深入 GIL: 如何寫出快速且 thread-safe 的 Python – Grok the GIL: How to write fast and thread-safe Python</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>GIL</tag>
+        <tag>OS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面試 debug 情境題</title>
+    <url>/2021-07-06/%E9%9D%A2%E8%A9%A6-debug-%E6%83%85%E5%A2%83%E9%A1%8C/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>面試的時候被考到一題情境題覺得蠻有趣的，於是決定記錄下來</p>
+<hr>
+<h2 id="面試過程"><a href="#面試過程" class="headerlink" title="面試過程"></a>面試過程</h2><p>面試官：今天有一個網站是 3-tier 的架構（前端、後端、資料庫），某天你發現首頁 load 不出來，這時候你會怎麼做？</p>
+<p>我：打開瀏覽器的 console 看 network 那邊的 request 狀態是怎樣</p>
+<p>面試官：你打開了，看到 request 沒有回傳 response，就卡著</p>
+<p>我：這樣看起來是後端掛了，先檢查後端的 log</p>
+<p>面試官：後端沒有 log，但是這個 controller 只有跟 db 撈資料，其他都沒有做</p>
+<p>我：那應該是後端跟 db 溝通的時候卡住了，這張表很大嗎？</p>
+<p>面試官：大概 10 萬筆</p>
+<p>我：那應該還好，db 那台的 memory 跟 CPU 都是健康的嗎？</p>
+<p>面試官：CPU 跟 memory 的 usage 都不超過 30%</p>
+<p>我：db 是 RDS 嗎？</p>
+<p>面試官：是</p>
+<p>我：RDS 可以看每條 query 跑的狀況，這條 query 跑的狀況有異常嗎？</p>
+<p>面試官：前幾次跑都沒問題，但是這次掛了</p>
+<p>我：…</p>
+<p>面試官：那現在是什麼問題？你需要一點提示嗎？</p>
+<p>我：好，我要提示</p>
+<p>面試官：你手動連接 db 發現連不進去了</p>
+<p>我：那應該是 connection pool 沒設定好，需要檢查一下 connection pool 的設定</p>
+<p>面試官：好，那今天你把 connection pool 調小一點，然後 bug 解掉了，但是過幾個月後流量暴增，現在服務又卡住了，你要怎麼優化？</p>
+<p>我：SQL 是讀寫都有，還是只有讀而已？</p>
+<p>面試官：只有讀</p>
+<p>我：對 db 做 replica</p>
+<p>面試官：OK，這樣問題解掉了，但是你的解法很浪費資源，因為效能瓶頸是卡在 db，不是後端流量被灌爆，但是你為了 replica，後端也要新開一台出來，但是大部分時間後端的利用率是很低的，你還有其他方法嗎？</p>
+<p>我：有錢嗎？</p>
+<p>面試官：老闆說，錢管夠</p>
+<p>我：機器多開幾台</p>
+<p>面試官：這是一個方法沒錯，還有其他的方法嗎？</p>
+<p>我：優化 SQL 的寫法，然後加上 cache</p>
+<p>面試官：你的 cache 打算怎麼做？</p>
+<p>我：在後端做 cache</p>
+<p>面試官：cache 的 key 是什麼</p>
+<p>我：我應該會用頁面當作 key</p>
+<p>面試官：OK 看起來應該差不多了</p>
+<hr>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>這是一次蠻新鮮的面試經驗，以前從沒被這樣考過，但是我還挺喜歡這種考法的，很貼近現實，而且考得層面很廣，考完一次大概就可以知道你大概懂哪些東西，哪邊地方比較弱，雖然這次考得算是我比較弱的 db 部分，但是在面試官的引導下還算是過關了</p>
+<p>以下是我把對話中的問題整理過，然後需要哪些方面的知識</p>
+<ol>
+<li>網頁 load 不出來 -&gt; 需要知道前端掛掉時怎麼找到前端的 log 跟 request 現在的狀態</li>
+<li>後端沒有 response -&gt; 這就代表了不是前端的問題，主要是卡在後端的 controller 那層</li>
+<li>後端的 code 只有跟 db 撈資料 -&gt; 需要知道 db 出狀況有哪些方式可以找到 db 的 log 或是該怎麼檢查 db 的狀態</li>
+<li>db 連不進去 -&gt; 需要知道造成 db 連不進去有可能的原因有哪些</li>
+<li>優化整個服務的效能 -&gt; 需要先抓到整個服務的效能瓶頸在哪，然後針對這個環節有哪些優化的手段，還有手上有哪些資源可以使用（人/錢）</li>
+</ol>
+]]></content>
+      <categories>
+        <category>面試</category>
+      </categories>
+      <tags>
+        <tag>Database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從瀏覽器輸入網址到看到網頁到底發生了哪些事？</title>
+    <url>/2021-07-04/%E5%BE%9E%E7%80%8F%E8%A6%BD%E5%99%A8%E8%BC%B8%E5%85%A5%E7%B6%B2%E5%9D%80%E5%88%B0%E7%9C%8B%E5%88%B0%E7%B6%B2%E9%A0%81%E5%88%B0%E5%BA%95%E7%99%BC%E7%94%9F%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BA%8B%EF%BC%9F/</url>
+    <content><![CDATA[<p><img data-src="/image/network.jpg"></p>
+<ol>
+<li>在 browser 輸入網址</li>
+<li>browser 跟 OS 要網址的 IP address</li>
+<li>OS 向 DNS 查詢 IP address（如果有 cache 會直接回傳 IP address 給 OS）</li>
+<li>DNS 向 Name Server 查詢 IP address</li>
+<li>OS 將從 DNS/Name Server 查詢到的 IP address 回傳給 browser</li>
+</ol>
+<p><img data-src="/image/request.jpg"></p>
+<ol start="6">
+<li>browser 拿到 IP address 後對 IP address 做 HTTP/HTTPS request<ol>
+<li> 如果使用 HTTPS 會先使用 TLS 對憑證做認證並產生加密的 session key，並對 request 的資料內容作加密</li>
+<li> browser 與 Server 做 TCP 的三項交握確認 Server 現在可以接收資料</li>
+</ol>
+</li>
+<li>Server 上的 Nginx/Apache 接收到 request，並將 request pass 到 code base 中（Python/PHP/JavaScript）</li>
+<li>code base 將 request 處理完之後回傳 response</li>
+<li>browser 接收到 response 後根據 response 的內容將頁面 render 出來</li>
+</ol>
+]]></content>
+      <categories>
+        <category>面試</category>
+        <category>網概</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+</search>
