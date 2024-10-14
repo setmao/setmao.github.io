@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Network on Set&#39;s Note</title>
+    <link>http://localhost:1313/tags/network/</link>
+    <description>Recent content in Network on Set&#39;s Note</description>
+    <image>
+      <title>Set&#39;s Note</title>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 17 Jul 2021 23:51:20 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Awesome Online Exercises</title>
+      <link>http://localhost:1313/posts/awesome-online-exercises/</link>
+      <pubDate>Sat, 17 Jul 2021 23:51:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/awesome-online-exercises/</guid>
+      <description>記錄一些好玩的線上練習網站</description>
+    </item>
+    <item>
+      <title>HTTP GET method vs POST method</title>
+      <link>http://localhost:1313/posts/http-get-post-comparison/</link>
+      <pubDate>Sun, 04 Jul 2021 23:51:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/http-get-post-comparison/</guid>
+      <description>HTTP 的 method 中最常被用到的應該就是 GET 及 POST 了但是 GET 與 POST 除了使用場景不一樣之外，到底還有哪些區別呢？</description>
+    </item>
+    <item>
+      <title>HTTPS 加密了哪些東西？</title>
+      <link>http://localhost:1313/posts/https-encryption-details/</link>
+      <pubDate>Sun, 04 Jul 2021 23:51:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/https-encryption-details/</guid>
+      <description>HTTPS 加密了哪些東西？</description>
+    </item>
+    <item>
+      <title>從瀏覽器輸入網址到看到網頁到底發生了哪些事？</title>
+      <link>http://localhost:1313/posts/from-request-to-response/</link>
+      <pubDate>Sun, 04 Jul 2021 23:51:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/from-request-to-response/</guid>
+      <description>從瀏覽器輸入網址到看到網頁到底發生了哪些事？</description>
+    </item>
+  </channel>
+</rss>

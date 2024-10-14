@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker on Set&#39;s Note</title>
+    <link>http://localhost:1313/tags/docker/</link>
+    <description>Recent content in Docker on Set&#39;s Note</description>
+    <image>
+      <title>Set&#39;s Note</title>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 29 Jun 2020 23:51:20 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup/Restore a dockerized PostgreSQL database</title>
+      <link>http://localhost:1313/posts/backup-and-restore-dockerized-postgresql/</link>
+      <pubDate>Mon, 29 Jun 2020 23:51:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/backup-and-restore-dockerized-postgresql/</guid>
+      <description>記錄一下要怎麼在 docker 中對 PostgreSQL 備份/匯入資料</description>
+    </item>
+    <item>
+      <title>Docker: no space left on device</title>
+      <link>http://localhost:1313/posts/docker-no-space/</link>
+      <pubDate>Tue, 09 Jun 2020 23:51:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/docker-no-space/</guid>
+      <description>最近在 build docker image 的時候遇到 No space left on device 的問題。因為在解的過程發現好像蠻多人都有遇過這個問題，於是就把解的過程記錄下來，希望能幫到其他人。</description>
+    </item>
+  </channel>
+</rss>
