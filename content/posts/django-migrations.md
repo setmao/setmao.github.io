@@ -23,7 +23,7 @@ Django 的 Migrations 除了在能在資料庫中建立新的資料表、修改�
 python manage.py makemigrations --empty yourappname
 接著在 migration 中加入以下的 code，並將 combine_names 改成你想做的事情
 
-```Python
+```python
 from django.db import migrations
 
 def combine_names(apps, schema_editor):
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
 
 這邊需要注意的是 model 需要用這種方式取得：
 
-```Python
+```python
 Person = apps.get_model('yourappname', 'Person')
 ```
 
@@ -56,6 +56,6 @@ Person = apps.get_model('yourappname', 'Person')
 
 寫完之後
 
-```shell
+```bash
 python manage.py migrate
 ```
