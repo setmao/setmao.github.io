@@ -91,9 +91,9 @@ params:
   # icon: icon.png
   # iconHeight: 35
 
-  analytics:
-    google:
-      SiteVerificationTag: "G-VL6VE3Y5LW"
+  # analytics:
+    # google:
+      # SiteVerificationTag: ""
 
   assets:
     disableHLJS: true
@@ -134,3 +134,5 @@ services:
     disableInlineCSS: true
   twitter:
     disableInlineCSS: true
+  googleAnalytics:
+    id: G-VL6VE3Y5LW
