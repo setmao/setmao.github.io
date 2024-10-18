@@ -70,6 +70,8 @@ params:
     Content: >
       👋 Welcome to Set's Note
 
+  social: true
+
   socialIcons:
     - name: github
       url: "https://github.com/setmao/"
