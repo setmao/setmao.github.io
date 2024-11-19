@@ -20,7 +20,10 @@ Django 的 Migrations 除了在能在資料庫中建立新的資料表、修改�
 
 首先我們先執行下面的指令來生出一個空的 migration
 
+```bash
 python manage.py makemigrations --empty yourappname
+```
+
 接著在 migration 中加入以下的 code，並將 combine_names 改成你想做的事情
 
 ```python
